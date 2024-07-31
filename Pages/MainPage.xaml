@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
+             xmlns:viewmodels="clr-namespace:SensorsApp.ViewModels"
+             x:Class="SensorsApp.Pages.MainPage"
+             x:DataType="viewmodels:MainPageViewModel">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="1,1">
+            <GradientStopCollection>
+                <GradientStop Offset="0.3" Color="#e4e796"/>
+                <GradientStop Offset="0.6" Color="#b3cca9"/>
+                <GradientStop Offset="1" Color="#50ac5d"/>
+            </GradientStopCollection>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center"
+            >
+
+            <Label
+                Text="Inertial sensors"
+                FontSize="Small"
+                HorizontalOptions="Start"
+                Margin="0,25,0,0"/>
+
+            <Button
+                x:Name="Accelerometer"
+                Text="Accelerometer" 
+                SemanticProperties.Hint="Navigates to the Accelerometer page"
+                HorizontalOptions="Fill"
+                Command="{Binding NavigateToAccelerometerPageCommand}"
+            />
+
+            <Button
+                x:Name="Gyroscope"
+                Text="Gyroscope" 
+                SemanticProperties.Hint="Navigates to the Gyroscope page"
+                HorizontalOptions="Fill"
+                Command="{Binding NavigateToGyroscopePageCommand}"/>
+
+            <Label
+                 Text="Non-Inertial sensors"
+                 FontSize="Small"
+                 HorizontalOptions="Start" />
+
+            <Button
+                x:Name="Magnetometer"
+                Text="Magnetometer" 
+                SemanticProperties.Hint="Navigates to the Magnetometer page"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="Barometer"
+                Text="Barometer" 
+                SemanticProperties.Hint="Navigates to the Barometer page"
+                HorizontalOptions="Fill"
+                Command="{Binding NavigateToBarometerPageCommand}"/>
+
+            <Button
+                x:Name="Location"
+                Text="Location" 
+                SemanticProperties.Hint="Navigates to the Location page"
+                HorizontalOptions="Fill" />
+
+            <Label
+                 Text="Vision"
+                 FontSize="Small"
+                 HorizontalOptions="Start" />
+
+            <Button
+                x:Name="Camera"
+                Text="Camera" 
+                SemanticProperties.Hint="Navigates to the Location page"
+                HorizontalOptions="Fill" />
+
+            <Label
+                Text="Other sensors"
+                FontSize="Small"
+                HorizontalOptions="Start" />
+
+            <Button
+                x:Name="Microphone"
+                Text="Microphone" 
+                SemanticProperties.Hint="Navigates to the Microphone page"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="Light"
+                Text="Light" 
+                SemanticProperties.Hint="Navigates to the Light page"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="Pedometer"
+                Text="Pedometer" 
+                SemanticProperties.Hint="Navigates to the Pedometer page"
+                HorizontalOptions="Fill" 
+                Margin="0,0,0,25"/>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

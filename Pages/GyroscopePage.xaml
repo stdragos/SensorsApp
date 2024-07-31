@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SensorsApp.Pages.GyroscopePage"
+             Shell.NavBarIsVisible="False"
+             Title="GyroscopePage"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.2*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"
+        Text="{Binding MainPageViewModel.GyroscopeValues}"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center" />
+
+        <lvc:CartesianChart x:Name="Chart" Grid.Row="1" Series="{Binding Series}" Title="{Binding Title}">
+
+        </lvc:CartesianChart>
+
+        <Button x:Name="ResetGraph" Grid.Row="2" Text="Recenter graph" Clicked="ResetGraph_Clicked"/>
+
+    </Grid>
+</ContentPage>
